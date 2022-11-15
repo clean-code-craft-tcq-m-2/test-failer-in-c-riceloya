@@ -23,7 +23,7 @@ int main() {
         if (t_shirts == 0)
         {
             printf("ERROR\n");
-            break;
+            //break;
         }      
     }
     /*assert(size(37) == 'S');
