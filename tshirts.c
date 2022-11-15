@@ -14,7 +14,6 @@ char size(int cms) {
 }
 
 int main() {
-    
     for (int i = 0; i < 0xFF; i++)
     {
         printf("size: %d\n", i);
