@@ -22,6 +22,9 @@ int main() {
         printf("result: %c\n", t_shirts);
         if (t_shirts == 0)
         {
+            assert(size(i)=='S');
+            assert(size(i)=='M');
+            assert(size(i)=='L');
             printf("ERROR\n");
             //break;
         }      
