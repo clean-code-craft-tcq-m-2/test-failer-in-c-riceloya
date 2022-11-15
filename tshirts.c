@@ -14,10 +14,21 @@ char size(int cms) {
 }
 
 int main() {
-    assert(size(37) == 'S');
+    char t_shirts;
+    
+    for (int i = 37; i < 43; i++)
+    {
+        t_shirts = size(i);
+        printf("result: %c\n", t_shirts);
+        if (t_shirts == 0)
+        {
+            printf("ERROR\n");
+            break;
+        }      
+    }
+    /*assert(size(37) == 'S');
     assert(size(40) == 'M');
-    assert(size(43) == 'L');
-    assert(size(38) == 'M');
-    printf("All is well (maybe!)\n");
+    assert(size(43) == 'L');    
+    printf("All is well (maybe!)\n");*/
     return 0;
 }
