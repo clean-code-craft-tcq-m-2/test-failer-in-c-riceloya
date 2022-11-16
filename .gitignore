@@ -1,1 +1,5 @@
-*.out
+#ignore all
+*
+#except...
+!.c
+!.h

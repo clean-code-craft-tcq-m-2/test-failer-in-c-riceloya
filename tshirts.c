@@ -16,13 +16,8 @@ char size(int cms) {
 }
 
 int main() {
-    //for (int i = 30; i < 64; i++)
-    int i;
-    time_t t;
-    srand((unsigned) time(&t));
-    while(1)
-    {
-        i =(rand()%(48-29)) + 29;
+    
+    for (int i = 36; i < 44; i++){
         printf("size: %d\n", i);
         if (i<38){
             assert(size(i) == 'S');
