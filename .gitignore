@@ -1,5 +1,7 @@
 #ignore all
-*
+.exe
 #except...
-!.c
-!.h
+#!.gitignore
+#!.md
+#!.c
+#!.h
