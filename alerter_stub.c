@@ -11,4 +11,6 @@ int networkAlertStub(float celcius) {
     return 200;
 }
 
-void testCelcius(){assert(alertFailureCount <= 0);}
+void testCelcius(){
+    assert(alertFailureCount <= 0);
+}
