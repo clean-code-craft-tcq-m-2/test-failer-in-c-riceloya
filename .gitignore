@@ -1,1 +1,7 @@
-*.out
+#ignore all
+.exe
+#except...
+#!.gitignore
+#!.md
+#!.c
+#!.h
