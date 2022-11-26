@@ -1,26 +1,33 @@
+#include "misaligned.h"
 #include <stdio.h>
-#include <assert.h>
+#include <string.h>
 
-int printColorMap() {
-    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-    int i = 0, j = 0, k = 0;
-    char manualmap[16]={};
-    for(i = 0; i < 5; i++) {
-        for(j = 0; j < 5; j++) {
-            k = i*5+j;
-            sprintf(manualmap,"%d | %s | %s\n", k, majorColor[i], minorColor[i]);
-            assert(manualmap[3] == '|');
-            printf("%s",manualmap);
-        }
-    }
-    assert(k==(i*j));
-    return i * j;
+const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+
+int indexesToPairNumber(int majorIndex, int minorIndex) {
+    return majorIndex * 5 + minorIndex;
 }
 
-int main() {
-    int result = printColorMap();
-    assert(result == 25);
-    printf("All is well (maybe!)\n");
-    return 0;
+void formHeading(char* heading) {
+    strcpy(heading, "Pair number,Major color,Minor color");
+}
+
+void formRow(int majorIndex, int minorIndex, char* row) {
+    sprintf(row, "%d,%s,%s", indexesToPairNumber(majorIndex, minorIndex), majorColor[majorIndex], minorColor[minorIndex]);
+}
+
+int printColorMap() {
+    char heading[MAX_ROW_LEN];
+    formHeading(heading);
+    printf("%s\n", heading);
+    int i = 0, j = 0;
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 5; j++) {
+            char row[MAX_ROW_LEN];
+            formRow(i, j, row);
+            printf("%s\n", row);
+        }
+    }
+    return i * j;
 }
